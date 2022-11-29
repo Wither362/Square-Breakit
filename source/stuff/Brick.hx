@@ -1,4 +1,4 @@
 package stuff;
 
-class Brick extends FlxSprite {
+class Brick extends Stupid {
 }
