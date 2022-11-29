@@ -1,0 +1,2 @@
+class PlayState extends FlxState {
+}
