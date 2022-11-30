@@ -1,6 +1,4 @@
 package stuff;
 
-import stuff.system.Stupid;
-
-class Ball extends Stupid {
+class Ball extends FlxSprite {
 }
