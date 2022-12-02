@@ -12,7 +12,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 
 class Main extends Sprite {
-  var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
+    var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
 	var initialState:Class<FlxState> = PlayState; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
@@ -54,6 +54,7 @@ class Main extends Sprite {
 
 	private function setupGame():Void
 	{
+        var daGame = new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen);
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -67,7 +68,7 @@ class Main extends Sprite {
 		}
 
 		//ClientPrefs.loadDefaultKeys();
-		addChild(new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen));
+		addChild(daGame);
 
 		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
@@ -81,7 +82,9 @@ class Main extends Sprite {
 
 		//FlxG.autoPause = #if html5 false #else ClientPrefs.autoPause #end;
 
-		FlxG.mouse.visible = false;
+		FlxG.mouse.visible = true;
+        FlxG.sound.muted = false;
+        FlxG.sound.volume = 1;
 
 		/*#if CRASH_HANDLER
 		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);

@@ -20,7 +20,7 @@ class FlxSplash extends FlxState
 	/**
 	 * @since 4.8.0
 	 */
-	public static var muted:Bool = #if html5 true #else false #end;
+	public static var muted:Bool = false;
 
 	var _sprite:Sprite;
 	var _gfx:Graphics;
@@ -34,14 +34,18 @@ class FlxSplash extends FlxState
 	var _cachedTimestep:Bool;
 	var _cachedAutoPause:Bool;
 
-	var greenColor:Dynamic = 0x00b922;
-	var yellowColor:Dynamic = 0xffc132;
+	var greenColor:Dynamic = 0x0c3013; //0x00b922;
+	var yellowColor:Dynamic = 0x4d0000; //0xffc132;
 	var redColor:Dynamic = 0xf5274e;
 	var blueColor:Dynamic = 0x3641ff;
 	var lightBlueColor:Dynamic = 0x04cdfb;
 
 	override public function create():Void
 	{
+        FlxG.mouse.visible = true;
+        FlxG.sound.muted = false;
+        FlxG.sound.volume = 1;
+
 		_cachedBgColor = FlxG.cameras.bgColor;
 		FlxG.cameras.bgColor = FlxColor.BLACK;
 
@@ -84,10 +88,7 @@ class FlxSplash extends FlxState
 		onResize(stageWidth, stageHeight);
 
 		#if FLX_SOUND_SYSTEM
-		if (!muted)
-		{
-			FlxG.sound.load(FlxAssets.getSound("flixel/sounds/flixel")).play();
-		}
+		FlxG.sound.load(FlxAssets.getSound("flixel/sounds/flixel")).play();
 		#end
 	}
 
@@ -121,7 +122,7 @@ class FlxSplash extends FlxState
 	{
 		_functions[_curPart]();
 		_text.textColor = _colors[_curPart];
-		_text.text = "Made with HaxeFlixel";
+		_text.text = "Wither362 and HaxeFlixel";
 		_curPart++;
 
 		if (_curPart == 5)
