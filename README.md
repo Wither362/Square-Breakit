@@ -4,5 +4,5 @@ A currently in process game, using Haxeflixel, used with my friends and I, to pl
 
 Credits
 - [Wither362 (me!)](https://github.com/Wither362) - Coder
-- [Wentuj]() - Artist
+- [Wentuj](https://www.pixilart.com/wentuj727) - Artist
 - [Pablo]() - Artist
