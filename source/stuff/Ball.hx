@@ -33,7 +33,7 @@ class Ball extends FlxSprite {
 
 	private function set_type(v:String):String {
 		var tetetet:String = 'balls/base/';
-		switch (v) {
+		switch (v.toLowerCase().replace(' ', '').replace('-', '')) {
 			case 'basketball':
 				tetetet += 'basketball';
 			case 'blueball':
@@ -43,7 +43,7 @@ class Ball extends FlxSprite {
 			case 'magnetball':
 				tetetet += 'magnet';
 			case 'miniorangeball':
-				tetetet += 'mini orange';
+				tetetet += 'mini-orange';
 			case 'orangeball':
 				tetetet += 'orange';
 			case 'plasmaball':
@@ -61,11 +61,14 @@ class Ball extends FlxSprite {
 		loadGraphic(Paths.image(tetetet));
 
 		loadGraphic(Paths.image(tetetet), false, Std.int(width), Std.int(height));
+
+		updateHitbox();
+
 		return type = v;
 	}
 
 	private function get_texture():String {
-		return texture + ' $BALL';
+		return texture + '-$BALL';
 	}
 
 	private function set_texture(v:String):String {
