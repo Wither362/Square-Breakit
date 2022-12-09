@@ -38,11 +38,11 @@ class Paths {
 	}
 
 	inline static public function image(key:String) {
-		return file('images/$key.PNG'); // or is it PNG?
+		return file('images/$key.png'); // or is it PNG?
 	}
 
 	inline static public function otherImage(key:String) {
-	    return file('images/$key.png'); // or is it PNG?
+	    return file('images/$key.PNG'); // or is it png?
 	}
 
 	inline static public function font(key:String) {
