@@ -3,6 +3,8 @@ package stuff;
 import flixel.FlxSprite;
 import flixel.FlxG;
 
+using StringTools;
+
 class Ball extends FlxSprite {
 	/**
 	 * The type of ball `this` FlxSprite is
