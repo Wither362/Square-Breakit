@@ -1,4 +1,4 @@
-# Square-Breakit
+# Square-Breakit (Now passed to AGK, this project gets cancelled until I discover a way to implement it to Haxe using Haxeflixel or something like that, for now, this is Archived)
 
 A currently in process game, using Haxeflixel, used with my friends and I, to play when we were school.
 
